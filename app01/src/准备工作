@@ -1,0 +1,46 @@
+总任务： 在线考试管理系统 ---->  用户信息管理模块
+
+子任务：
+    用户信息注册
+    用户信息查询
+    用户信息删除
+    用户信息更新
+
+准备工作：
+    1. 在数据库中创建一个用于存储用户信息的表。
+        CREATE TABLE t_user(
+            userId int primary key auto_increment,
+            userName varchar(20) unique,
+            password varchar(14) not null,
+            gender char(1),
+            email varchar(30)
+        );
+
+    2. 在src下创建对应表结构的实体类：
+        表中字段 ---> 实体类中的私有属性。
+
+    3. 在src下创建以个工具类并添加之前所使用的连接数据库的工具类。
+
+    4. 在web文件夹下WEB-INF夹新建一个lib目录存放java连接数据库使用的jar包。
+
+
+任务： 在线考试管理系统------试题信息管理模块
+
+子任务：
+        添加试题
+        查询试题
+        删除试题
+        更新试题
+
+准备工作：
+    1. 准备试题信息表：单选题每道题有四个选项正确选项一个
+    CREATE TABLE question(
+        Id int primary key auto_increment,
+        title varchar(55),
+        optionA varchar(20),
+        optionB varchar(20),
+        optionC varchar(20),
+        optionD varchar(20),
+        answer char(1)
+    );
+    2. 创建表对应的试题java类。
